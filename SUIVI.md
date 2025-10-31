@@ -68,4 +68,33 @@ QzBible
                 - résultat : {
                                 "681a2386c5a2a10fd9d93874": "500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application."
                             }
-                
+            * rafraichir le token
+                - methode : POST
+                - url : https://dev-backend.qzbible.com/auth/refresh
+                - donnée : entrer le token de rafraichissement donné
+                - code obtenu : 200 OK
+                - résultat :{
+                                "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc2MTkyMTA2NywianRpIjoiN2M1ZmQxNDgtN2Y5Ni00Yjk0LWJiZmEtZmQwNjhjMTM3N2RmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjY5MDRiYWJlODllODFmMmU2OTcxMmZlMSIsIm5iZiI6MTc2MTkyMTA2NywiZXhwIjoxNzYxOTIxOTY3fQ.N6EidR63Xq3XDhScVDkoqFNaplIXg36Me_1JbRYJ18I"
+                            }
+            * forgot password
+                - methode : POST
+                - url : https://dev-backend.qzbible.com/auth/forgot_password
+                - donnée : {
+                                "email": "awalnjiagupmun@gmail.com"
+                            }
+                - code obtenu : 200 OK
+                - résultat :{
+                                "message": "Si cet email existe, un lien a été envoyé"
+                            }
+            * rénitialisation du mot de passe
+                - methode : POST
+                - url : https://dev-backend.qzbible.com/auth/refresh_password/{token}
+                - donnée : {
+                                "new_password": "motdepasse123",
+                                "confirm_password": "motdepasse123",
+                                "user_id": "6904c00d89e81f2e69712fe5"
+                            }
+                - code obtenu : 400 bad request
+                - résultat :{
+                                "error": "'user_id'"
+                            }
