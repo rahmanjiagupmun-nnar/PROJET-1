@@ -9,7 +9,26 @@ QzBible
         -- dans postman, on crée une nouvelle requete et on teste tous les liens donnée (en utilisant la méthode POST). Pour le cas de ce projet, on commence par tester les authentification
             * création d'un compte staff 
                 - methode : POST
-                - url : 
-                - donnée : 
-                - code obtenu : 
-                - résultat : 
+                - url : https://dev-backend.qzbible.com/users/create_staff
+                - donnée : {
+                                "name": "awa",
+                                "first_name": "njiagupmun",
+                                "email": "awarahma2021@gmail.com",
+                                "password": "12345",
+                                "confirm_password": "12345"
+                            }
+                - code obtenu : 201
+                - résultat : created
+            * création d'un compte admin pour un magasin
+                - methode : POST
+                - url : https://dev-backend.qzbible.com/users/create_admin
+                - donnée : {
+                                "name": "awa",
+                                "first_name": "njiagupmun",
+                                "email": "awarahma2021@gmail.com",
+                                "magasin_id": "magas1"
+                            }
+                - code obtenu : 401
+                - résultat : {
+                                "msg": "Missing Authorization Header"
+                             }
